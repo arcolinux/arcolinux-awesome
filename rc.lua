@@ -849,7 +849,7 @@ awful.rules.rules = {
       properties = { titlebars_enabled = false } },
 
     -- Set applications to always map on the tag 1 on screen 1.
-    -- find class or role via xpropr command
+    -- find class or role via xprop command
     --{ rule = { class = browser2 },
       --properties = { screen = 1, tag = awful.util.tagnames[1] } },
 
@@ -896,7 +896,7 @@ awful.rules.rules = {
 
 
     -- Set applications to be maximized at startup.
-    -- find class or role via xpropr command
+    -- find class or role via xprop command
 
     { rule = { class = editorgui },
           properties = { maximized = true } },
