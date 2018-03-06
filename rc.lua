@@ -907,7 +907,7 @@ awful.rules.rules = {
     { rule = { class = "Gnome-disks" },
           properties = { maximized = true } },
 
-    { rule = { class = "Inkscape" },
+    { rule = { class = "inkscape" },
           properties = { maximized = true } },
 
     { rule = { class = mediaplayer },
