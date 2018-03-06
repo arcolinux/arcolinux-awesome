@@ -218,7 +218,6 @@ local myawesomemenu = {
     { "hotkeys", function() return false, hotkeys_popup.show_help end },
     { "manual", terminal .. " -e 'man awesome'" },
     { "edit config", terminal .." -e 'nano ~/.config/awesome/rc.lua'" },
-    { "xrandr", "xrandr --auto" },
     { "arandr", "arandr" },
     { "restart", awesome.restart },
 }
