@@ -249,10 +249,10 @@ menu\_iterator
 
 A generic menu utility which enables iteration over lists of possible
 actions to execute. The perfect example is a menu for choosing what
-configuration to apply to X with `xrandr`, as suggested on the [Awesome wiki page][https://awesomewm.org/recipes/xrandr].
+configuration to apply to X with `xrandr`, as suggested on the [Awesome wiki page](https://awesomewm.org/recipes/xrandr).
 
 <p align="center">
-    <img src="https://github.com/sim590/lain-wiki/blob/menu-iterator/img/xrandr.gif"/>
+    <img src="https://user-images.githubusercontent.com/4147254/36317474-3027f8b6-130b-11e8-9b6b-9a2cf55ae841.gif"/>
     <br>An example XRandR menu, courtesy of <a href="https://github.com/sim590/dotfiles/blob/master/awesome/rc/xrandr.lua">sim590</a>
 </p>
 

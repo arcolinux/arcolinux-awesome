@@ -2,12 +2,15 @@ Welcome to the Lain wiki!
 
 If you spot a typo or have a suggestion, please notify me opening an [issue](https://github.com/lcpz/lain/issues) format. Thank you.
 
-Dependency
+Dependencies
 ------------
 
 Package | Requested by | Reasons of choice
 --- | --- | ---
 [curl](https://curl.haxx.se) | `imap`, `mpd`, and `weather` widgets | 1. faster and simpler to use than [LuaSocket](https://github.com/diegonehab/luasocket); 2. it's in the core of almost every distro; 3. can be called [asynchronously](https://awesomewm.org/doc/api/libraries/awful.spawn.html#easy_async)
+GLib >= 2.54 | `fs` widget | Pure Awesome/Lua implementation.
+
+The second dependency will be removed once all major distros update their Gio/Glib versions.
 
 Installation
 ------------

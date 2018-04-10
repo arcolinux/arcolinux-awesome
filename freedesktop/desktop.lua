@@ -141,7 +141,7 @@ end
 function desktop.add_base_icons(args)
     for _,base in ipairs(args.baseicons) do
         desktop.add_single_icon(args, base.label, utils.lookup_icon(base.icon), function()
-            awful.spawn(string.format("%s '%s'", args.open_width, base.onclick))
+            awful.spawn(string.format("%s '%s'", args.open_with, base.onclick))
         end)
     end
 end
