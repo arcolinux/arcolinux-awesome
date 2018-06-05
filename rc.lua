@@ -934,7 +934,8 @@ awful.rules.rules = {
           properties = { maximized = true } },
           
     { rule = { class = "Xfce4-settings-manager" },
-          properties = { maximized = true } },
+          properties = { floating = false } },
+
 
 
 
