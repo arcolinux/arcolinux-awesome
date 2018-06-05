@@ -373,6 +373,8 @@ globalkeys = my_table.join(
         {description = editorgui, group = "alt+ctrl"}),
     awful.key({ modkey1, altkey   }, "Return", function() awful.util.spawn(terminal) end,
         {description = terminal, group = "alt+ctrl"}),
+    awful.key({ modkey1, altkey   }, "m", function() awful.util.spawn( "xfce4-settings-manager" ) end,
+        {description = "Xfce settings manager", group = "alt+ctrl"}),
 
     -- alt + ...
     awful.key({ altkey, "Shift"   }, "t", function () awful.spawn.with_shell( "variety -t  && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&" ) end,
@@ -929,6 +931,9 @@ awful.rules.rules = {
           properties = { maximized = true } },
 
     { rule = { class = "VirtualBox Machine" },
+          properties = { maximized = true } },
+          
+    { rule = { class = "Xfce4-settings-manager" },
           properties = { maximized = true } },
 
 
