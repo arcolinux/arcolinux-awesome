@@ -4,7 +4,7 @@
 
 ### Description
 
-Shows memory status (in MiB).
+Shows memory status in MiB, [like `top` and `free -h`](https://github.com/lcpz/lain/issues/271).
 
 ```lua
 local mymem = lain.widget.mem()

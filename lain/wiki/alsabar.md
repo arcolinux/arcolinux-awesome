@@ -27,7 +27,7 @@ Variable | Meaning | Type | Default
 `notification_preset` | Notification preset | table | See [default `notification_preset`](https://github.com/lcpz/lain/wiki/alsabar#default-notification_preset)
 `followtag` | Display the notification on currently focused screen | boolean | false
 
-`cmd` is useful if you need to pass additional arguments to  `amixer`. For instance, you may want to define `command = "amixer -c X"` in order to set amixer with card `X`.
+`cmd` is useful if you need to pass additional arguments to  `amixer`. For instance, you may want to define `cmd = "amixer -c X"` in order to set amixer with card `X`.
 
 In case mute toggling can't be mapped to master channel (this happens, for instance, when you are using an HDMI output), define `togglechannel` as your S/PDIF device. Read [`alsa`](https://github.com/lcpz/lain/wiki/alsa#toggle-channel) page to know how.
 
