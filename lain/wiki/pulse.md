@@ -28,7 +28,7 @@ Variable | Meaning | Type | Default
     device.string = "front:1"
 ```
 
-If your devices change dinamically, you can define it as a function which returns a command string.
+If your devices change dynamically, you can define it as a function which returns a command string.
 
 If sed doesn't work, you can try with a grep variant:
 

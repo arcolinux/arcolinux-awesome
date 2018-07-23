@@ -32,7 +32,7 @@ Variable | Meaning | Type | Default
 `port` | MPD port | string | "6600"
 `music_dir` | Music directory | string | "~/Music"
 `cover_size` | Album art notification size (both height and width) | integer | 100
-`cover_pattern` | Pattern for the album art file | string | `*\\.(jpg|jpeg|png|gif)`*
+`cover_pattern` | Pattern for the album art file | string | `*.(jpg\|jpeg\|png\|gif)$`
 `default_art` | Default art | string | `nil`
 `notify` | Show notification popups | string | "on"
 `followtag` | Notification behaviour | boolean | false

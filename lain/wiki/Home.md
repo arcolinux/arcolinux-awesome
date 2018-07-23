@@ -1,6 +1,6 @@
 Welcome to the Lain wiki!
 
-If you spot a typo or have a suggestion, please notify me opening an [issue](https://github.com/lcpz/lain/issues) format. Thank you.
+If you spot a typo or have a suggestion to improve these pages, please notify me opening an [issue](https://github.com/lcpz/lain/issues) format. Thank you.
 
 Dependencies
 ------------
