@@ -49,7 +49,6 @@ If you want to see some applications, check [awesome-copycats](https://github.co
 
 ## Users contributed
 
-- [kbdlayout](https://github.com/lcpz/lain/wiki/kbdlayout)
 - [moc](https://github.com/lcpz/lain/wiki/moc)
 - [redshift](https://github.com/lcpz/lain/wiki/redshift)
 - [task](https://github.com/lcpz/lain/wiki/task)

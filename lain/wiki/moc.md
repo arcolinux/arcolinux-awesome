@@ -81,22 +81,22 @@ You can control the widget with key bindings like these:
 -- MOC control
 awful.key({ altkey, "Control" }, "Up",
 	function ()
-		awful.spawn.with_shell("mocp -G")
+		os.execute("mocp -G") -- toggle
 		moc.update()
 	end),
 awful.key({ altkey, "Control" }, "Down",
 	function ()
-		awful.spawn.with_shell("mocp -s")
+		os.execute("mocp -s") -- stop
 		moc.update()
 	end),
 awful.key({ altkey, "Control" }, "Left",
 	function ()
-		awful.spawn.with_shell("mocp -r")
+		os.execute("mocp -r") -- previous
 		moc.update()
 	end),
 awful.key({ altkey, "Control" }, "Right",
 	function ()
-		awful.spawn.with_shell("mocp -f")
+		os.execute("mocp -f") -- next
 		moc.update()
 	end),
 ```

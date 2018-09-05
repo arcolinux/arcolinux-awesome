@@ -68,19 +68,19 @@ volume.widget:buttons(awful.util.table.join(
         awful.spawn("pavucontrol")
     end),
     awful.button({}, 2, function() -- middle click
-        awful.spawn(string.format("pactl set-sink-volume %d 100%%", volume.device))
+        os.execute(string.format("pactl set-sink-volume %d 100%%", volume.device))
         volume.update()
     end),
     awful.button({}, 3, function() -- right click
-        awful.spawn(string.format("pactl set-sink-mute %d toggle", volume.device))
+        os.execute(string.format("pactl set-sink-mute %d toggle", volume.device))
         volume.update()
     end),
     awful.button({}, 4, function() -- scroll up
-        awful.spawn(string.format("pactl set-sink-volume %d +1%%", volume.device))
+        os.execute(string.format("pactl set-sink-volume %d +1%%", volume.device))
         volume.update()
     end),
     awful.button({}, 5, function() -- scroll down
-        awful.spawn(string.format("pactl set-sink-volume %d -1%%", volume.device))
+        os.execute(string.format("pactl set-sink-volume %d -1%%", volume.device))
         volume.update()
     end)
 ))
