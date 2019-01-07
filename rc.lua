@@ -382,7 +382,7 @@ globalkeys = my_table.join(
         {description = "Pywal Wallpaper next", group = "altkey"}),
     awful.key({ altkey, "Shift"   }, "u", function () awful.spawn.with_shell( "wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&" ) end,
         {description = "Pywal Wallpaper update", group = "altkey"}),
-    awful.key({ altkey, "Shift"   }, "p", function () awful.spawn.with_shell( "variety -p  && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&" ) end,
+    awful.key({ altkey, "Shift"   }, "j", function () awful.spawn.with_shell( "variety -p  && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&" ) end,
         {description = "Pywal Wallpaper previous", group = "altkey"}),
     awful.key({ altkey }, "t", function () awful.util.spawn( "variety -t" ) end,
         {description = "Wallpaper trash", group = "altkey"}),
@@ -552,7 +552,7 @@ globalkeys = my_table.join(
         {description = "toggle wibox", group = "awesome"}),
 
     -- On the fly useless gaps change
-    awful.key({ altkey, "Control" }, "p", function () lain.util.useless_gaps_resize(1) end,
+    awful.key({ altkey, "Control" }, "j", function () lain.util.useless_gaps_resize(1) end,
               {description = "increment useless gaps", group = "tag"}),
     awful.key({ altkey, "Control" }, "l", function () lain.util.useless_gaps_resize(-1) end,
               {description = "decrement useless gaps", group = "tag"}),
