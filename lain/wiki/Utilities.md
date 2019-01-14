@@ -170,9 +170,17 @@ Useless gaps resize
 
 Changes `beautiful.useless_gaps` on the fly.
 
-The function takes an integer argument, being the amount of pixel to add/remove to gaps.
+```lua
+lain.util.useless_gap_resize(thatmuch, s, t)
+```
 
-You could use it with these keybindings:
+The argument `thatmuch` is the number of pixel to add to/substract from gaps (integer).
+
+The arguments `s` and `t` are the `awful.screen` and `awful.tag` in which you want to change the gap. They are optional.
+
+Following are example keybindings for changing client gaps on current screen and tag.
+
+Example 1:
 
 ```lua
 -- On the fly useless gaps change
@@ -180,7 +188,7 @@ awful.key({ altkey, "Control" }, "+", function () lain.util.useless_gaps_resize(
 awful.key({ altkey, "Control" }, "-", function () lain.util.useless_gaps_resize(-1) end),
 ```
 
-where `altkey = Mod1`, or you could use it like this:
+where `altkey = Mod1`. Example 2:
 
 ```lua
 mywidget:buttons(awful.util.table.join (

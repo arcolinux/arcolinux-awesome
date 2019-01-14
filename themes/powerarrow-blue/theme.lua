@@ -10,7 +10,7 @@ local lain  = require("lain")
 local awful = require("awful")
 local wibox = require("wibox")
 
-local os, math, string = os, math, string
+local math, string, os = math, string, os
 local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 
 local theme                                     = {}
@@ -112,7 +112,7 @@ local clock = awful.widget.watch(
 )
 
 -- Calendar
-theme.cal = lain.widget.calendar({
+theme.cal = lain.widget.cal({
     attach_to = { clock },
     notification_preset = {
         font = "Noto Sans Mono Medium 10",
@@ -137,7 +137,7 @@ theme.cal = lain.widget.calendar({
 local mailicon = wibox.widget.imagebox(theme.widget_mail)
 --[[ commented because it needs to be set before use
 mailicon:buttons(my_table.join(awful.button({ }, 1, function () awful.spawn(mail) end)))
-local mail = lain.widget.imap({
+theme.mail = lain.widget.imap({
     timeout  = 180,
     server   = "server",
     mail     = "mail",
@@ -263,7 +263,7 @@ theme.fs = lain.widget.fs({
 local baticon = wibox.widget.imagebox(theme.widget_battery)
 local bat = lain.widget.bat({
     settings = function()
-        if bat_now.status ~= "N/A" then
+        if bat_now.status and bat_now.status ~= "N/A" then
             if bat_now.ac_status == 1 then
                 widget:set_markup(markup.font(theme.font, " AC "))
                 baticon:set_image(theme.widget_ac)

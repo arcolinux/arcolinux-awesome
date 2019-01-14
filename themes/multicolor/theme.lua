@@ -10,7 +10,7 @@ local lain  = require("lain")
 local awful = require("awful")
 local wibox = require("wibox")
 
-local os = { getenv = os.getenv, setlocale = os.setlocale }
+local os = os
 local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 
 local theme                                     = {}
@@ -102,7 +102,7 @@ local mytextclock = wibox.widget.textclock(markup("#7788af", "%A %d %B ") .. mar
 mytextclock.font = theme.font
 
 -- Calendar
-theme.cal = lain.widget.calendar({
+theme.cal = lain.widget.cal({
     attach_to = { mytextclock },
     notification_preset = {
         font = "Noto Sans Mono Medium 10",
@@ -133,10 +133,10 @@ theme.weather = lain.widget.weather({
    -- end
 --})
 
---[[ Mail IMAP check
--- commented because it needs to be set before use
+-- Mail IMAP check
+--[[ commented because it needs to be set before use
 local mailicon = wibox.widget.imagebox()
-local mail = lain.widget.imap({
+theme.mail = lain.widget.imap({
     timeout  = 180,
     server   = "server",
     mail     = "mail",

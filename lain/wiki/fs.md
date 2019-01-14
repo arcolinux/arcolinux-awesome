@@ -18,6 +18,7 @@ Variable | Meaning | Type | Default
 --- | --- | --- | ---
 `timeout` | Refresh timeout (in seconds) | integer | 600
 `partition` | (Optional) Partition to watch: a notification will be displayed when full | string | `nil`
+`threshold` | Percentage threshold at which the notification is triggered | integer | 99
 `notification_preset` | Notification preset | table | See [default `notification_preset`](https://github.com/lcpz/lain/wiki/fs#default-notification_preset)
 `followtag` | Display the notification on currently focused screen | boolean | false
 `showpopup` | Display popups with mouse hovering | string, possible values: "on", "off" | "on"

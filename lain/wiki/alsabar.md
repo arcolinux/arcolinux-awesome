@@ -16,8 +16,10 @@ Variable | Meaning | Type | Default
 --- | --- | --- | ---
 `timeout` | Refresh timeout (in seconds) | integer | 5
 `settings` | User settings | function | empty function
-`width` | Bar width | integer | 63
-`height` | Bar height | integer | 1
+`width` | Bar width | number | 63
+`height` | Bar height | number | 1
+`margins` | Bar margins | number | 1
+`paddings` | Bar paddings | number | 1
 `ticks` | Set bar ticks on | boolean | false
 `ticks_size` | Ticks size | integer | 7
 `cmd` | ALSA mixer command | string | "amixer"

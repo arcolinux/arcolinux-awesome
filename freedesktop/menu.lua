@@ -1,30 +1,23 @@
-
 --[[
-                                                        
-     Awesome-Freedesktop                                
-     Freedesktop.org compliant desktop entries and menu 
-                                                        
-     Menu section                                       
-                                                        
-     Licensed under GNU General Public License v2       
-      * (c) 2016, Luke Bonham                           
-      * (c) 2014, Harvey Mittens                        
-                                                        
+
+     Awesome-Freedesktop
+     Freedesktop.org compliant desktop entries and menu
+
+     Menu section
+
+     Licensed under GNU General Public License v2
+      * (c) 2016, Luke Bonham
+      * (c) 2014, Harvey Mittens
+
 --]]
 
 local awful_menu = require("awful.menu")
 local menu_gen   = require("menubar.menu_gen")
 local menu_utils = require("menubar.utils")
 local icon_theme = require("menubar.icon_theme")
+local gls        = require("gears.filesystem")
 
-local os         = { execute = os.execute,
-                     getenv  = os.getenv }
-local pairs      = pairs
-local string     = { byte    = string.byte,
-                     format  = string.format }
-local table      = { insert  = table.insert,
-                     remove  = table.remove,
-                     sort    = table.sort }
+local pairs, string, table, os = pairs, string, table, os
 
 -- Add support for NixOS systems too
 table.insert(menu_gen.all_menu_dirs, string.format("%s/.nix-profile/share/applications", os.getenv("HOME")))
@@ -32,7 +25,7 @@ table.insert(menu_gen.all_menu_dirs, string.format("%s/.nix-profile/share/applic
 -- Remove non existent paths in order to avoid issues
 local existent_paths = {}
 for k,v in pairs(menu_gen.all_menu_dirs) do
-    if os.execute(string.format("ls %s >/dev/null 2>&1", v)) then
+    if gls.is_dir(v) then
         table.insert(existent_paths, v)
     end
 end
@@ -49,8 +42,8 @@ local menu = {}
 -- @param tab a given table
 -- @param val the element to search for
 -- @return true if the given string is found within the search table; otherwise, false if not
-local function has_value (tab, val)
-    for index, value in ipairs(tab) do
+function menu.has_value (tab, val)
+    for index, value in pairs(tab) do
         if val:find(value) then
             return true
         end
@@ -66,6 +59,7 @@ function menu.build(args)
     local before     = args.before or {}
     local after      = args.after or {}
     local skip_items = args.skip_items or {}
+    local sub_menu   = args.sub_menu or false
 
     local result     = {}
     local _menu      = awful_menu({ items = before })
@@ -80,7 +74,7 @@ function menu.build(args)
         for k, v in pairs(entries) do
             for _, cat in pairs(result) do
                 if cat[1] == v.category then
-                    if not has_value(skip_items, v.name) then
+                    if not menu.has_value(skip_items, v.name) then
                         table.insert(cat[2], { v.name, v.cmdline, v.icon })
                     end
                     break
@@ -105,6 +99,11 @@ function menu.build(args)
         -- Sort categories alphabetically also
         table.sort(result, function(a, b) return string.byte(a[1]) < string.byte(b[1]) end)
 
+        -- Add menu item to hold the generated menu
+        if sub_menu then
+            result = {{sub_menu, result}}
+        end
+
         -- Add items to menu
         for _, v in pairs(result) do _menu:add(v) end
         for _, v in pairs(after)  do _menu:add(v) end
@@ -116,6 +115,9 @@ function menu.build(args)
             v.icon = icon_theme():find_icon_path(v.icon_name, icon_size)
         end
     end
+
+    -- Hold the menu in the module
+    menu.menu = _menu
 
     return _menu
 end

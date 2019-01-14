@@ -1,15 +1,14 @@
-
 --[[
-                                                        
-     Awesome-Freedesktop                                
-     Freedesktop.org compliant desktop entries and menu 
-                                                        
-     Desktop section                                    
-                                                        
-     Licensed under GNU General Public License v2       
-      * (c) 2016,      Luke Bonham                      
-      * (c) 2009-2015, Antonio Terceiro                 
-                                                        
+
+     Awesome-Freedesktop
+     Freedesktop.org compliant desktop entries and menu
+
+     Desktop section
+
+     Licensed under GNU General Public License v2
+      * (c) 2016,      Luke Bonham
+      * (c) 2009-2015, Antonio Terceiro
+
 --]]
 
 local awful  = require("awful")
@@ -17,12 +16,12 @@ local theme  = require("beautiful")
 local utils  = require("menubar.utils")
 local wibox  = require("wibox")
 
-local capi   = { screen = screen }
+local capi   = capi
 local io     = io
 local ipairs = ipairs
 local mouse  = mouse
 local os     = os
-local string = { format = string.format }
+local string = string
 local table  = table
 
 -- Desktop icons

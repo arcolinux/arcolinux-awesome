@@ -19,11 +19,11 @@ In the scope of `settings` you can use predefined arguments, which are specified
 Example of a lain widget:
 
 ```lua
-local cpu = lain.widget.cpu({
+local cpu = lain.widget.cpu {
     settings = function()
         widget:set_markup("Cpu " .. cpu_now.usage)
     end
-})
+}
 -- to access the widget: cpu.widget
 ```
 
@@ -34,7 +34,7 @@ If you want to see some applications, check [awesome-copycats](https://github.co
 - [alsa](https://github.com/lcpz/lain/wiki/alsa)
 - [alsabar](https://github.com/lcpz/lain/wiki/alsabar)
 - [bat](https://github.com/lcpz/lain/wiki/bat)
-- [calendar](https://github.com/lcpz/lain/wiki/calendar)
+- [cal](https://github.com/lcpz/lain/wiki/cal)
 - [cpu](https://github.com/lcpz/lain/wiki/cpu)
 - [fs](https://github.com/lcpz/lain/wiki/fs)
 - [imap](https://github.com/lcpz/lain/wiki/imap)
@@ -52,4 +52,4 @@ If you want to see some applications, check [awesome-copycats](https://github.co
 - [moc](https://github.com/lcpz/lain/wiki/moc)
 - [redshift](https://github.com/lcpz/lain/wiki/redshift)
 - [task](https://github.com/lcpz/lain/wiki/task)
-- [tpbat](https://github.com/lcpz/lain/wiki/tpbat)
+- [tp_smapi](https://github.com/lcpz/lain/wiki/tp_smapi)

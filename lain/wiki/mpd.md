@@ -145,6 +145,14 @@ awful.key({ altkey }, "0",
 
 ## Notes
 
+### Cover not showing in notifications
+
+If the cover file is existent but not showed in notifications, [try](https://github.com/lcpz/lain/issues/393) setting `music_dir` to a symlink of your music folder, rather than to a physical path. This can be easily done through
+```shell
+ln -s /the/real_path_to_your_music/ /home/username/Music
+```
+However, this only applies if the music is stored outside your user-specific folder, for instance in an external partition.
+
 ### Always use `set_markup`
 
 In `settings`, if you use `widget:set_text`, [it will ignore Pango markup](https://github.com/lcpz/lain/issues/258), so be sure to always use `widget:set_markup`.

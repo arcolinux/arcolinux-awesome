@@ -15,7 +15,7 @@ local mynet = lain.widget.net()
 Variable | Meaning | Type | Default
 --- | --- | --- | ---
 `timeout` | Refresh timeout (in seconds) | integer | 2
-`iface` | Network device(s) | string (single interface) or array of strings (multiple interfaces) | autodetected
+`iface` | Network device(s) | string (single interface) or table of strings (multiple interfaces) | autodetected
 `units` | Units | integer | 1024 (kilobytes)
 `notify` | Display "no carrier" notifications | string | "on"
 `wifi_state` | Get wifi connection status | string | "off"
@@ -23,7 +23,7 @@ Variable | Meaning | Type | Default
 `screen` | Notifications screen | integer | 1
 `settings` | User settings | function | empty function
 
-`iface` can be a string or an array of the form `{ "eth0", "eth1", ... }` containing a list of the devices to collect data on.
+`iface` can be a string or an table of the form `{ "eth0", "eth1", ... }` containing a list of the devices to collect data on.
 
 If more than one device is included, `net_now.sent` and `net_now.received` will contain cumulative values over all given devices.
 Use `net_now.devices["eth0"]` to access `sent`, `received`, `state` or `carrier` per device.
@@ -45,7 +45,7 @@ If `wifi_state = "on"` is set, `settings` can use the following extra strings at
 
 If `eth_state = "on"` is set, `settings` can use the following extra string: `net_now.devices["ethernet interface"].ethernet`, which is a boolean indicating if an ethernet connection's active.
 
-For compatibility reasons, if multiple devices are given, `net_now.carrier` and `net_now.state` correspond to the last interface in the iface array and should not be relied upon (deprecated).
+For compatibility reasons, if multiple devices are given, `net_now.carrier` and `net_now.state` correspond to the last interface in the iface table and should not be relied upon (deprecated).
 
 ## Output table
 
@@ -68,7 +68,7 @@ ip link show
 
 ```lua
 local mynetdown = wibox.widget.textbox()
-local mynetup = lain.widgets.net {
+local mynetup = lain.widget.net {
     settings = function()
         widget:set_markup(net_now.sent)
         netdowninfo:set_markup(net_now.received)
