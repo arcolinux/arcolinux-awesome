@@ -316,7 +316,7 @@ globalkeys = my_table.join(
         {description = "htop", group = "super"}),
     awful.key({ modkey }, "m", function () awful.util.spawn( mediaplayer ) end,
         {description = "mediaplayer", group = "super"}),
-    awful.key({ modkey }, "q", function () awful.spawn( browser) end,
+    awful.key({ modkey }, "q", function () awful.spawn( browser1 ) end,
         {description = "run browser", group = "super"}),
     awful.key({ modkey }, "r", function () awful.util.spawn( "rofi-theme-selector" ) end,
         {description = "rofi theme selector", group = "super"}),
