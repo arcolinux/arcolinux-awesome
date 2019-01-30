@@ -373,7 +373,7 @@ globalkeys = my_table.join(
     awful.key({ modkey1, altkey   }, "m", function() awful.util.spawn( "xfce4-settings-manager" ) end,
         {description = "Xfce settings manager", group = "alt+ctrl"}),
     awful.key({ modkey1, altkey   }, "p", function() awful.util.spawn( "pamac-manager" ) end,
-        {description = "Pamac Manager", group = "alt+ctrl"}),            
+        {description = "Pamac Manager", group = "alt+ctrl"}),
 
     -- alt + ...
     awful.key({ altkey, "Shift"   }, "t", function () awful.spawn.with_shell( "variety -t  && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&" ) end,
@@ -692,7 +692,7 @@ globalkeys = my_table.join(
     awful.key({ modkey1, "Shift" }, "s",
 
 
-  
+
         function ()
             local common = { text = "MPD widget ", position = "top_middle", timeout = 2 }
             if beautiful.mpd.timer.started then
@@ -940,7 +940,7 @@ awful.rules.rules = {
 
     { rule = { class = "VirtualBox Machine" },
           properties = { maximized = true } },
-          
+
     { rule = { class = "Xfce4-settings-manager" },
           properties = { floating = false } },
 
