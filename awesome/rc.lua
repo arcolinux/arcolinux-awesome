@@ -118,7 +118,7 @@ local filemanager       = "thunar"
 local mailclient        = "evolution"
 local mediaplayer       = "spotify"
 local scrlocker         = "slimlock"
-local terminal          = "termite"
+local terminal          = "urxvt"
 local virtualmachine    = "virtualbox"
 
 -- awesome variables
