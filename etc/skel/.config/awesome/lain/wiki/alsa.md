@@ -134,3 +134,15 @@ awful.key({ altkey, "Control" }, "0",
 ```
 
 where `altkey = "Mod1"`.
+
+### Muting with PulseAudio
+
+If you are using this widget in conjuction with PulseAudio, add the option `-D pulse` to the muting keybinding, like this:
+
+```lua
+awful.key({ altkey }, "m",
+	function ()
+		os.execute(string.format("amixer -D pulse set %s toggle", volume.togglechannel or volume.channel))
+		volume.update()
+	end),
+```

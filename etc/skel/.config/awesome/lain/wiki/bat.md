@@ -23,6 +23,7 @@ Variable | Meaning | Type | Default
 `batteries` | Multiple batteries id table | table of strings | autodetected
 `ac` | AC | string | autodetected
 `notify` | Show notification popups | string | "on"
+`full_notify` | Show a notification popup when the battery's fully charged | string | inherited value from `notify`
 `n_perc` | Percentages assumed for critical and low battery levels | table of integers | `{5, 15}`
 `settings` | User settings | function | empty function
 

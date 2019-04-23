@@ -21,6 +21,8 @@ Variable | Meaning | Type | Default
 `week_start` | First day of the week | integer | 2 (Monday)
 `three` | Display three months spanning the date | boolean | false
 `followtag` | Display the notification on currently focused screen | boolean | false
+`week_number` | Display the week number | string ("none", "left" or "right") | "none"
+`week_number_format` | Week number format | string | `"%3d \| "` for "left", `"\| %-3d"` for "right"
 `icons` | Path to calendar icons | string | [icons/cal/white/](https://github.com/lcpz/lain/tree/master/icons/cal/white)
 `notification_preset` | Notification preset | table | See [default `notification_preset`](https://github.com/lcpz/lain/wiki/calendar#default-notification_preset)
 

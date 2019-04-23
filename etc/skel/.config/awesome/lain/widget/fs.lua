@@ -15,6 +15,7 @@ local naughty    = require("naughty")
 local math       = math
 local string     = string
 local tconcat    = table.concat
+local type       = type
 local tonumber   = tonumber
 local query_size = Gio.FILE_ATTRIBUTE_FILESYSTEM_SIZE
 local query_free = Gio.FILE_ATTRIBUTE_FILESYSTEM_FREE
@@ -45,7 +46,7 @@ local function factory(args)
         fs.notification_preset.screen = fs.followtag and focused() or scr or 1
         fs.notification = naughty.notify {
             preset  = fs.notification_preset,
-            timeout = seconds or 5
+            timeout = type(seconds) == "number" and seconds or 5
         }
     end
 
@@ -68,8 +69,9 @@ local function factory(args)
     end
 
     function fs.update()
-        local notifytable = { [1] = string.format("%-10s %-5s %s\t%s\t\n", "path", "used", "free", "size") }
+        local notifytable = { [1] = string.format("%-10s %4s\t%6s\t%6s\t\n", "path", "used", "free", "size") }
         local pathlen = 10
+        local maxpathidx = 1
         fs_now = {}
 
         for _, mount in ipairs(Gio.unix_mounts_get()) do
@@ -94,11 +96,14 @@ local function factory(args)
                     }
 
                     if fs_now[path].percentage > 0 then -- don't notify unused file systems
-                        notifytable[#notifytable+1] = string.format("\n%-10s %-5s %.2f\t%.2f\t%s", path,
-                        fs_now[path].percentage .. "%", fs_now[path].free, fs_now[path].size,
+                        notifytable[#notifytable+1] = string.format("\n%-10s %3s%%\t%6.2f\t%6.2f\t%s", path,
+                        math.floor(fs_now[path].percentage), fs_now[path].free, fs_now[path].size,
                         fs_now[path].units)
 
-                        pathlen = math.max(pathlen, #path)
+                        if #path > pathlen then
+                            pathlen = #path
+                            maxpathidx = #notifytable
+                        end
                     end
                 end
             end
@@ -120,10 +125,13 @@ local function factory(args)
             end
         end
 
-        if pathlen > 10 then -- formatting aesthetics
+        if pathlen > 10 then -- if are there paths longer than 10 chars, reformat first column accordingly
+            local pathspaces
             for i = 1, #notifytable do
-                local pathspaces = notifytable[i]:match("/%w*[/%w*]*%s*") or notifytable[i]:match("path%s*")
-                notifytable[i] = notifytable[i]:gsub(pathspaces, pathspaces .. string.rep(" ", pathlen - 10) .. "\t")
+                pathspaces = notifytable[i]:match("[ ]+")
+                if i ~= maxpathidx and pathspaces then
+                    notifytable[i] = notifytable[i]:gsub(pathspaces, pathspaces .. string.rep(" ", pathlen - 10))
+                end
             end
         end
 
