@@ -90,9 +90,9 @@ awful.spawn.with_shell(
 -- {{{ Variable definitions
 
 local themes = {
-    "powerarrow-blue", -- 1
-    "powerarrow",      -- 2
-    "multicolor",      -- 3
+    "multicolor", 			-- 1
+    "powerarrow",      		-- 2
+    "powerarrow-blue",      -- 3
 
 }
 

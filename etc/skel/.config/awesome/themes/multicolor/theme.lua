@@ -16,7 +16,7 @@ local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 
 local theme                                     = {}
 theme.confdir                                   = os.getenv("HOME") .. "/.config/awesome/themes/multicolor"
-theme.wallpaper                                 = theme.confdir .. "/wall.jpg"
+theme.wallpaper                                 = theme.confdir .. "/wallpaper.jpg"
 theme.font                                      = "Noto Sans Regular 11"
 theme.taglist_font                              = "Noto Sans Regular 13"
 theme.menu_bg_normal                            = "#000000"
@@ -60,7 +60,7 @@ theme.taglist_squares_sel                       = theme.confdir .. "/icons/squar
 theme.taglist_squares_unsel                     = theme.confdir .. "/icons/square_b.png"
 theme.tasklist_plain_task_name                  = true
 theme.tasklist_disable_icon                     = true
-theme.useless_gap                               = 0
+theme.useless_gap                               = 5
 theme.layout_tile                               = theme.confdir .. "/icons/tile.png"
 theme.layout_tilegaps                           = theme.confdir .. "/icons/tilegaps.png"
 theme.layout_tileleft                           = theme.confdir .. "/icons/tileleft.png"
