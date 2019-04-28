@@ -581,6 +581,12 @@ globalkeys = my_table.join(
     awful.key({ modkey }, "-", function ()
     awful.screen.focused().systray.visible = not awful.screen.focused().systray.visible
     end, {description = "Toggle systray visibility", group = "awesome"}),
+    
+ -- Show/Hide Systray       
+    awful.key({ modkey }, "KP_Subtract", function ()
+    awful.screen.focused().systray.visible = not awful.screen.focused().systray.visible
+    end, {description = "Toggle systray visibility", group = "awesome"}),
+
         
 
     -- On the fly useless gaps change
