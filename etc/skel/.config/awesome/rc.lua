@@ -302,6 +302,8 @@ root.buttons(my_table.join(
 globalkeys = my_table.join(
 
     -- {{{ Personal keybindings
+    awful.key({ modkey }, "w", function () awful.util.spawn( browser1 ) end,
+
     -- dmenu
     awful.key({ modkey, "Shift"   }, "d",
     function ()
@@ -317,7 +319,7 @@ globalkeys = my_table.join(
     awful.key({ modkey }, "F2", function () awful.util.spawn( editorgui ) end,
         {description = editorgui , group = "function keys" }),
     awful.key({ modkey }, "F3", function () awful.util.spawn( "inkscape" ) end,
-        {description = "inkscape" , group = "function keys" }),
+        {description = "inkscape" ,wgroup = "function keys" }),
     awful.key({ modkey }, "F4", function () awful.util.spawn( "gimp" ) end,
         {description = "gimp" , group = "function keys" }),
     awful.key({ modkey }, "F5", function () awful.util.spawn( "meld" ) end,
@@ -541,10 +543,6 @@ globalkeys = my_table.join(
             end,
             {description = "focus right", group = "client"}),
 
-
-
-    awful.key({ modkey,           }, "w", function () awful.util.mymainmenu:show() end,
-              {description = "show main menu", group = "awesome"}),
 
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end,
@@ -906,52 +904,56 @@ awful.rules.rules = {
     -- Titlebars
     { rule_any = { type = { "dialog", "normal" } },
       properties = { titlebars_enabled = false } },
+          -- Set applications to always map on the tag 2 on screen 1.
+    --{ rule = { class = "Subl3" },
+        --properties = { screen = 1, tag = awful.util.tagnames[2], switchtotag = true  } },
+
 
     -- Set applications to always map on the tag 1 on screen 1.
     -- find class or role via xprop command
     --{ rule = { class = browser2 },
-      --properties = { screen = 1, tag = awful.util.tagnames[1] } },
+      --properties = { screen = 1, tag = awful.util.tagnames[1], switchtotag = true  } },
 
     --{ rule = { class = browser1 },
-      --properties = { screen = 1, tag = awful.util.tagnames[1] } },
+      --properties = { screen = 1, tag = awful.util.tagnames[1], switchtotag = true  } },
 
     --{ rule = { class = "Vivaldi-snapshot" },
-        --properties = { screen = 1, tag = awful.util.tagnames[1] } },
+        --properties = { screen = 1, tag = awful.util.tagnames[1], switchtotag = true } },
 
     --{ rule = { class = "Chromium" },
-      --properties = { screen = 1, tag = awful.util.tagnames[1] } },
+      --properties = { screen = 1, tag = awful.util.tagnames[1], switchtotag = true  } },
 
     --{ rule = { class = "Opera" },
-      --properties = { screen = 1, tag = awful.util.tagnames[1] } },
+      --properties = { screen = 1, tag = awful.util.tagnames[1],switchtotag = true  } },
 
     -- Set applications to always map on the tag 2 on screen 1.
     --{ rule = { class = "Subl3" },
-        --properties = { screen = 1, tag = awful.util.tagnames[2] } },
+        --properties = { screen = 1, tag = awful.util.tagnames[2],switchtotag = true  } },
 
     --{ rule = { class = editorgui },
-        --properties = { screen = 1, tag = awful.util.tagnames[2] } },
+        --properties = { screen = 1, tag = awful.util.tagnames[2], switchtotag = true  } },
 
     --{ rule = { class = "Brackets" },
-        --properties = { screen = 1, tag = awful.util.tagnames[2] } },
+        --properties = { screen = 1, tag = awful.util.tagnames[2], switchtotag = true  } },
 
     --{ rule = { class = "Code" },
-        --properties = { screen = 1, tag = awful.util.tagnames[2] } },
+        --properties = { screen = 1, tag = awful.util.tagnames[2], switchtotag = true  } },
 
-    --{ rule = { class = "Geany" },
-        --properties = { screen = 1, tag = awful.util.tagnames[2] } },
+    --    { rule = { class = "Geany" },
+         --  properties = { screen = 1, tag = awful.util.tagnames[2], switchtotag = true  } },
+
 
     -- Set applications to always map on the tag 3 on screen 1.
     --{ rule = { class = "Inkscape" },
-        --properties = { screen = 1, tag = awful.util.tagnames[3] } },
+        --properties = { screen = 1, tag = awful.util.tagnames[3], switchtotag = true  } },
 
     -- Set applications to always map on the tag 4 on screen 1.
     --{ rule = { class = "Gimp" },
-        --properties = { screen = 1, tag = awful.util.tagnames[4] } },
+        --properties = { screen = 1, tag = awful.util.tagnames[4], switchtotag = true  } },
 
     -- Set applications to always map on the tag 5 on screen 1.
     --{ rule = { class = "Meld" },
-        --properties = { screen = 1, tag = awful.util.tagnames[5] } },
-
+        --properties = { screen = 1, tag = awful.util.tagnames[5] , switchtotag = true  } },
 
 
     -- Set applications to be maximized at startup.
