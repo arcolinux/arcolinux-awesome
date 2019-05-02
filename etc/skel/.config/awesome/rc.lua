@@ -303,7 +303,7 @@ globalkeys = my_table.join(
 
     -- {{{ Personal keybindings
     awful.key({ modkey }, "w", function () awful.util.spawn( browser1 ) end,
-
+        {description = browser1, group = "function keys"}),
     -- dmenu
     awful.key({ modkey, "Shift"   }, "d",
     function ()
