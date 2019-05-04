@@ -247,7 +247,7 @@ awful.util.mymainmenu = freedesktop.menu.build({
     }
 })
 -- hide menu when mouse leaves it
-awful.util.mymainmenu.wibox:connect_signal("mouse::leave", function() awful.util.mymainmenu:hide() end)
+--awful.util.mymainmenu.wibox:connect_signal("mouse::leave", function() awful.util.mymainmenu:hide() end)
 
 --menubar.utils.terminal = terminal -- Set the Menubar terminal for applications that require it
 -- }}}
