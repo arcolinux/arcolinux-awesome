@@ -917,7 +917,7 @@ awful.rules.rules = {
     --{ rule = { class = browser1 },
       --properties = { screen = 1, tag = awful.util.tagnames[1], switchtotag = true  } },
 
-    --{ rule = { class = "Vivaldi-snapshot" },
+    --{ rule = { class = "Vivaldi-stable" },
         --properties = { screen = 1, tag = awful.util.tagnames[1], switchtotag = true } },
 
     --{ rule = { class = "Chromium" },
@@ -961,7 +961,10 @@ awful.rules.rules = {
 
     { rule = { class = editorgui },
           properties = { maximized = true } },
-
+          
+    { rule = { class = "Geany" },
+          properties = { maximized = false, floating = false } },
+      
     { rule = { class = "Gimp*", role = "gimp-image-window" },
           properties = { maximized = true } },
 
@@ -983,6 +986,12 @@ awful.rules.rules = {
     { rule = { class = "VirtualBox Machine" },
           properties = { maximized = true } },
 
+    { rule = { class = "Vivaldi-stable" },
+          properties = { maximized = false, floating = false } },
+          
+    { rule = { class = "Vivaldi-stable" }, 
+          properties = { callback = function (c) c.maximized = false end } },  
+                  
     { rule = { class = "Xfce4-settings-manager" },
           properties = { floating = false } },
 
