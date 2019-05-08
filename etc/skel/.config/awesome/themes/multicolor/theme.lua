@@ -310,7 +310,6 @@ function theme.at_screen_connect(s)
         nil,
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            wibox.widget.systray(),
             --mailicon,
             --mail.widget,
             mpdicon,
@@ -333,6 +332,7 @@ function theme.at_screen_connect(s)
             bat.widget,
             clockicon,
             mytextclock,
+            wibox.widget.systray(),
 
         },
     }
