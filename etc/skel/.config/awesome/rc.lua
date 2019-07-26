@@ -344,8 +344,6 @@ globalkeys = my_table.join(
         {description = "run gui editor", group = "super"}),
     awful.key({ modkey }, "h", function () awful.util.spawn( "urxvt -T 'htop task manager' -e htop" ) end,
         {description = "htop", group = "super"}),
-    awful.key({ modkey }, "m", function () awful.util.spawn( mediaplayer ) end,
-        {description = "mediaplayer", group = "super"}),
     awful.key({ modkey }, "r", function () awful.util.spawn( "rofi-theme-selector" ) end,
         {description = "rofi theme selector", group = "super"}),
     awful.key({ modkey }, "t", function () awful.util.spawn( terminal ) end,
