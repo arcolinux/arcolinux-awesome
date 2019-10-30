@@ -340,6 +340,8 @@ globalkeys = my_table.join(
         {description = "rofi" , group = "function keys" }),
 
     -- super + ...
+    awful.key({ modkey }, "c", function () awful.util.spawn( "conky-toggle" ) end,
+        {description = "conky-toggle", group = "super"}),
     awful.key({ modkey }, "e", function () awful.util.spawn( editorgui ) end,
         {description = "run gui editor", group = "super"}),
     awful.key({ modkey }, "h", function () awful.util.spawn( "urxvt -T 'htop task manager' -e htop" ) end,
@@ -365,7 +367,11 @@ globalkeys = my_table.join(
     awful.key({ modkey1, "Shift"  }, "Escape", function() awful.util.spawn("xfce4-taskmanager") end),
 
 
-    -- alt+ctrl +  ...
+    -- ctrl+alt +  ...
+    awful.key({ modkey1, altkey   }, "Next", function() awful.util.spawn( "conky-rotate -n" ) end,
+        {description = "Xfce appfinder", group = "alt+ctrl"}),
+    awful.key({ modkey1, altkey   }, "Prior", function() awful.util.spawn( "conky-rotate -p" ) end,
+        {description = "Xfce appfinder", group = "alt+ctrl"}),
     awful.key({ modkey1, altkey   }, "a", function() awful.util.spawn( "xfce4-appfinder" ) end,
         {description = "Xfce appfinder", group = "alt+ctrl"}),
     awful.key({ modkey1, altkey   }, "b", function() awful.util.spawn( filemanager ) end,
@@ -572,18 +578,18 @@ globalkeys = my_table.join(
             end
         end,
         {description = "toggle wibox", group = "awesome"}),
- 
- -- Show/Hide Systray       
+
+ -- Show/Hide Systray
     awful.key({ modkey }, "-", function ()
     awful.screen.focused().systray.visible = not awful.screen.focused().systray.visible
     end, {description = "Toggle systray visibility", group = "awesome"}),
-    
- -- Show/Hide Systray       
+
+ -- Show/Hide Systray
     awful.key({ modkey }, "KP_Subtract", function ()
     awful.screen.focused().systray.visible = not awful.screen.focused().systray.visible
     end, {description = "Toggle systray visibility", group = "awesome"}),
 
-        
+
 
     -- On the fly useless gaps change
     awful.key({ altkey, "Control" }, "j", function () lain.util.useless_gaps_resize(1) end,
@@ -780,7 +786,7 @@ clientkeys = my_table.join(
     awful.key({ modkey, "Shift"   }, "q",      function (c) c:kill()                         end,
               {description = "close", group = "hotkeys"}),
     awful.key({ modkey, },           "q",      function (c) c:kill()                         end,
-              {description = "close", group = "hotkeys"}),              
+              {description = "close", group = "hotkeys"}),
     awful.key({ modkey, "Shift" }, "space",  awful.client.floating.toggle                     ,
               {description = "toggle floating", group = "client"}),
     awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end,
@@ -960,10 +966,10 @@ awful.rules.rules = {
 
     { rule = { class = editorgui },
           properties = { maximized = true } },
-          
+
     { rule = { class = "Geany" },
           properties = { maximized = false, floating = false } },
-      
+
     { rule = { class = "Gimp*", role = "gimp-image-window" },
           properties = { maximized = true } },
 
@@ -987,17 +993,17 @@ awful.rules.rules = {
 
     { rule = { class = "Vivaldi-stable" },
           properties = { maximized = false, floating = false } },
-          
-    { rule = { class = "Vivaldi-stable" }, 
-          properties = { callback = function (c) c.maximized = false end } },  
-          
-    --IF using Vivaldi snapshot you must comment out the rules above for Vivaldi-stable as they conflict        
+
+    { rule = { class = "Vivaldi-stable" },
+          properties = { callback = function (c) c.maximized = false end } },
+
+    --IF using Vivaldi snapshot you must comment out the rules above for Vivaldi-stable as they conflict
 --    { rule = { class = "Vivaldi-snapshot" },
 --          properties = { maximized = false, floating = false } },
-          
---    { rule = { class = "Vivaldi-snapshot" }, 
---          properties = { callback = function (c) c.maximized = false end } },  
-                        
+
+--    { rule = { class = "Vivaldi-snapshot" },
+--          properties = { callback = function (c) c.maximized = false end } },
+
     { rule = { class = "Xfce4-settings-manager" },
           properties = { floating = false } },
 
