@@ -312,6 +312,10 @@ globalkeys = my_table.join(
 	end,
     {description = "show dmenu", group = "hotkeys"}),
 
+    -- Function keys
+    awful.key({ }, "F12", function () awful.util.spawn( "xfce4-terminal --drop-down" ) end,
+        {description = "dropdown terminal" , group = "function keys"}),
+
 
     -- super + ... function keys
     awful.key({ modkey }, "F1", function () awful.util.spawn( browser1 ) end,
