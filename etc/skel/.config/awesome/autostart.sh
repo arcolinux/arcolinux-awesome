@@ -19,8 +19,8 @@ run "numlockx on"
 #run "volumeicon"
 #run "nitrogen --restore"
 run "conky -c $HOME/.config/awesome/system-overview"
-#set wallpaper in themes
-#feh --bg-fill /usr/share/backgrounds/arcolinux/arco-wallpaper.jpg &
+#you can set wallpapers in themes as well
+feh --bg-fill /usr/share/backgrounds/arcolinux/arco-wallpaper.jpg &
 #run applications from startup
 #run "firefox"
 #run "atom"
