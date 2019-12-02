@@ -239,7 +239,7 @@ awful.util.mymainmenu = freedesktop.menu.build({
         { "Log out", function() awesome.quit() end },
         { "Sleep", "systemctl suspend" },
         { "Restart", "systemctl reboot" },
-        { "Exit", "systemctl poweroff" },
+        { "Shutdown", "systemctl poweroff" },
         -- other triads can be put here
     }
 })
