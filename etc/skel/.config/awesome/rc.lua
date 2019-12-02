@@ -225,10 +225,7 @@ beautiful.init(string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv
 -- {{{ Menu
 local myawesomemenu = {
     { "hotkeys", function() return false, hotkeys_popup.show_help end },
-    { "manual", terminal .. " -e 'man awesome'" },
-    { "edit config", terminal .." -e 'nano ~/.config/awesome/rc.lua'" },
     { "arandr", "arandr" },
-    { "restart", awesome.restart },
 }
 
 awful.util.mymainmenu = freedesktop.menu.build({
