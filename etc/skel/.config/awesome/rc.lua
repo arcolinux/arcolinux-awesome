@@ -1040,7 +1040,8 @@ awful.rules.rules = {
           "Wpa_gui",
           "pinentry",
           "veromix",
-          "xtightvncviewer"},
+          "xtightvncviewer",
+          "Xfce4-terminal"},
 
         name = {
           "Event Tester",  -- xev.
