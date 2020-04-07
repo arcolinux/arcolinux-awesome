@@ -16,12 +16,12 @@ local theme  = require("beautiful")
 local utils  = require("menubar.utils")
 local wibox  = require("wibox")
 
-local capi   = capi
 local io     = io
 local ipairs = ipairs
 local mouse  = mouse
 local os     = os
 local string = string
+local screen = screen
 local table  = table
 
 -- Desktop icons
@@ -77,13 +77,13 @@ function desktop.add_single_icon(args, label, icon, onclick)
 
     -- define icon dimensions and position
     if not desktop_current_pos[s] then
-        desktop_current_pos[s] = { x = (capi.screen[s].geometry.x + args.iconsize.width + args.margin.x), y = 40 }
+        desktop_current_pos[s] = { x = (screen[s].geometry.x + args.iconsize.width + args.margin.x), y = 40 }
     end
 
     local totheight = (icon and args.iconsize.height or 0) + (label and args.labelsize.height or 0)
     if totheight == 0 then return end
 
-    if desktop_current_pos[s].y + totheight > capi.screen[s].geometry.height - 40 then
+    if desktop_current_pos[s].y + totheight > screen[s].geometry.height - 40 then
         desktop_current_pos[s].x = desktop_current_pos[s].x + args.labelsize.width + args.iconsize.width + args.margin.x
         desktop_current_pos[s].y = 40
     end
