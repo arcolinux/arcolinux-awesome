@@ -123,7 +123,6 @@ local editorgui         = "atom"
 local filemanager       = "thunar"
 local mailclient        = "evolution"
 local mediaplayer       = "spotify"
-local scrlocker         = "slimlock"
 local terminal          = "urxvt"
 local virtualmachine    = "virtualbox"
 
@@ -365,7 +364,7 @@ globalkeys = my_table.join(
       {description = "exit", group = "hotkeys"}),
     awful.key({ modkey }, "Escape", function () awful.util.spawn( "xkill" ) end,
         {description = "Kill proces", group = "hotkeys"}),
-    awful.key({ modkey }, "k", function () awful.util.spawn( scrlocker ) end,
+    awful.key({ modkey }, "k", function () awful.util.spawn( "arcolinux-logout" ) end,
         {description = "screen lock", group = "super"}),
 
     -- super + shift + ...
@@ -397,7 +396,7 @@ globalkeys = my_table.join(
         {description = browser3, group = "alt+ctrl"}),
     awful.key({ modkey1, altkey   }, "i", function() awful.util.spawn("nitrogen") end,
         {description = nitrogen, group = "alt+ctrl"}),
-    awful.key({ modkey1, altkey   }, "k", function() awful.util.spawn( scrlocker ) end,
+    awful.key({ modkey1, altkey   }, "k", function() awful.util.spawn( "arcolinux-logout" ) end,
         {description = scrlocker, group = "alt+ctrl"}),
     awful.key({ modkey1, altkey   }, "o", function() awful.spawn.with_shell("$HOME/.config/awesome/scripts/compton-toggle.sh") end,
         {description = "Compton toggle", group = "alt+ctrl"}),
