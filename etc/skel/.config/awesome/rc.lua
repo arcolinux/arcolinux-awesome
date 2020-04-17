@@ -123,7 +123,6 @@ local editorgui         = "atom"
 local filemanager       = "thunar"
 local mailclient        = "evolution"
 local mediaplayer       = "spotify"
-local scrlocker         = "slimlock"
 local terminal          = "urxvt"
 local virtualmachine    = "virtualbox"
 
@@ -361,12 +360,10 @@ globalkeys = my_table.join(
         {description = "pulseaudio control", group = "super"}),
     awful.key({ modkey }, "u", function () awful.screen.focused().mypromptbox:run() end,
           {description = "run prompt", group = "super"}),
-    awful.key({ modkey }, "x",  function () awful.util.spawn( "oblogout" ) end,
+    awful.key({ modkey }, "x",  function () awful.util.spawn( "arcolinux-logout" ) end,
       {description = "exit", group = "hotkeys"}),
     awful.key({ modkey }, "Escape", function () awful.util.spawn( "xkill" ) end,
         {description = "Kill proces", group = "hotkeys"}),
-    awful.key({ modkey }, "k", function () awful.util.spawn( scrlocker ) end,
-        {description = "screen lock", group = "super"}),
 
     -- super + shift + ...
     awful.key({ modkey, "Shift"   }, "Return", function() awful.util.spawn( filemanager ) end),
@@ -397,7 +394,9 @@ globalkeys = my_table.join(
         {description = browser3, group = "alt+ctrl"}),
     awful.key({ modkey1, altkey   }, "i", function() awful.util.spawn("nitrogen") end,
         {description = nitrogen, group = "alt+ctrl"}),
-    awful.key({ modkey1, altkey   }, "k", function() awful.util.spawn( scrlocker ) end,
+    awful.key({ modkey1, altkey   }, "k", function() awful.util.spawn( "arcolinux-logout" ) end,
+        {description = scrlocker, group = "alt+ctrl"}),
+    awful.key({ modkey1, altkey   }, "l", function() awful.util.spawn( "arcolinux-logout" ) end,
         {description = scrlocker, group = "alt+ctrl"}),
     awful.key({ modkey1, altkey   }, "o", function() awful.spawn.with_shell("$HOME/.config/awesome/scripts/picom-toggle.sh") end,
         {description = "Picom toggle", group = "alt+ctrl"}),
@@ -1040,7 +1039,7 @@ awful.rules.rules = {
           "Font-manager",
           "Kruler",
           "MessageWin",  -- kalarm.
-          "Oblogout",
+          "arcolinux-logout",
           "Peek",
           "Skype",
           "System-config-printer.py",
