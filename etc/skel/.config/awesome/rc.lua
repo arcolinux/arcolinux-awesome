@@ -408,8 +408,6 @@ globalkeys = my_table.join(
         {description = "pulseaudio control", group = "alt+ctrl"}),
     awful.key({ modkey1, altkey   }, "v", function() awful.util.spawn( browser1 ) end,
         {description = browser1, group = "alt+ctrl"}),
-    awful.key({ modkey1, altkey   }, "w", function() awful.util.spawn( editorgui ) end,
-        {description = editorgui, group = "alt+ctrl"}),
     awful.key({ modkey1, altkey   }, "Return", function() awful.util.spawn(terminal) end,
         {description = terminal, group = "alt+ctrl"}),
     awful.key({ modkey1, altkey   }, "m", function() awful.util.spawn( "xfce4-settings-manager" ) end,
