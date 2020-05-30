@@ -1060,6 +1060,16 @@ awful.rules.rules = {
         }
       }, properties = { floating = true }},
 
+          -- Floating clients but centered in screen
+    { rule_any = {
+       	class = {
+       		"Polkit-gnome-authentication-agent-1"
+				},
+				}, 
+      	properties = { floating = true },
+	      	callback = function (c)
+    		  awful.placement.centered(c,nil)
+       		end }
 }
 -- }}}
 
