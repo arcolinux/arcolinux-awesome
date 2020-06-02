@@ -602,7 +602,7 @@ globalkeys = my_table.join(
     -- On the fly useless gaps change
     awful.key({ altkey, "Control" }, "j", function () lain.util.useless_gaps_resize(1) end,
               {description = "increment useless gaps", group = "tag"}),
-    awful.key({ altkey, "Control" }, "l", function () lain.util.useless_gaps_resize(-1) end,
+    awful.key({ altkey, "Control" }, "h", function () lain.util.useless_gaps_resize(-1) end,
               {description = "decrement useless gaps", group = "tag"}),
 
     -- Dynamic tagging
