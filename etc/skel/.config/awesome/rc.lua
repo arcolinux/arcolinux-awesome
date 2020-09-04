@@ -346,12 +346,12 @@ globalkeys = my_table.join(
         {description = "rofi" , group = "function keys" }),
 
     -- super + ...
-    awful.key({ modkey }, "c", function () awful.util.spawn( "conky-toggle" ) end,
-        {description = "conky-toggle", group = "super"}),
+    --awful.key({ modkey }, "c", function () awful.util.spawn( "conky-toggle" ) end,
+       -- {description = "conky-toggle", group = "super"}),
     awful.key({ modkey }, "e", function () awful.util.spawn( editorgui ) end,
         {description = "run gui editor", group = "super"}),
-    awful.key({ modkey }, "h", function () awful.util.spawn( "urxvt -T 'htop task manager' -e htop" ) end,
-        {description = "htop", group = "super"}),
+    --awful.key({ modkey }, "h", function () awful.util.spawn( "urxvt -T 'htop task manager' -e htop" ) end,
+        --{description = "htop", group = "super"}),
     awful.key({ modkey }, "r", function () awful.util.spawn( "rofi-theme-selector" ) end,
         {description = "rofi theme selector", group = "super"}),
     awful.key({ modkey }, "t", function () awful.util.spawn( terminal ) end,
@@ -755,11 +755,11 @@ globalkeys = my_table.join(
         {description = "mpc on/off", group = "widgets"}),
 
     -- Copy primary to clipboard (terminals to gtk)
-    awful.key({ modkey }, "c", function () awful.spawn.with_shell("xsel | xsel -i -b") end,
-              {description = "copy terminal to gtk", group = "hotkeys"}),
-    -- Copy clipboard to primary (gtk to terminals)
-    awful.key({ modkey }, "v", function () awful.spawn.with_shell("xsel -b | xsel") end,
-              {description = "copy gtk to terminal", group = "hotkeys"}),
+    --awful.key({ modkey }, "c", function () awful.spawn.with_shell("xsel | xsel -i -b") end,
+             -- {description = "copy terminal to gtk", group = "hotkeys"}),
+     --Copy clipboard to primary (gtk to terminals)
+    --awful.key({ modkey }, "v", function () awful.spawn.with_shell("xsel -b | xsel") end,
+              --{description = "copy gtk to terminal", group = "hotkeys"}),
 
 
     -- Default
