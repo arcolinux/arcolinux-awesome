@@ -1,6 +1,6 @@
 --[[
 
-     Awesome WM configuration template.
+     Awesome WM configuration template
      https://github.com/awesomeWM
 
      Freedesktop : https://github.com/lcpz/awesome-freedesktop
@@ -394,8 +394,8 @@ globalkeys = my_table.join(
         {description = browser3, group = "alt+ctrl"}),
     awful.key({ modkey1, altkey   }, "i", function() awful.util.spawn("nitrogen") end,
         {description = nitrogen, group = "alt+ctrl"}),
-    --awful.key({ modkey1, altkey   }, "k", function() awful.util.spawn( "arcolinux-logout" ) end,
-        --{description = scrlocker, group = "alt+ctrl"}),
+    awful.key({ modkey1, altkey   }, "k", function() awful.util.spawn( "arcolinux-logout" ) end,
+        {description = scrlocker, group = "alt+ctrl"}),
     awful.key({ modkey1, altkey   }, "l", function() awful.util.spawn( "arcolinux-logout" ) end,
         {description = scrlocker, group = "alt+ctrl"}),
     awful.key({ modkey1, altkey   }, "o", function() awful.spawn.with_shell("$HOME/.config/awesome/scripts/picom-toggle.sh") end,
