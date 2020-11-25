@@ -161,16 +161,16 @@ theme.volume = lain.widget.alsabar({
     notification_preset = { font = theme.font, fg = theme.fg_normal },
 })
 
+--[[
 -- MPD
---[[local musicplr = "urxvt -title Music -g 130x34-320+16 -e ncmpcpp"
+local musicplr = "urxvt -title Music -g 130x34-320+16 -e ncmpcpp"
 local mpdicon = wibox.widget.imagebox(theme.widget_music)
 mpdicon:buttons(my_table.join(
     awful.button({ modkey }, 1, function () awful.spawn.with_shell(musicplr) end),
     --[[awful.button({ }, 1, function ()
         awful.spawn.with_shell("mpc prev")
         theme.mpd.update()
-    end),
-    
+    end),   
     awful.button({ }, 2, function ()
         awful.spawn.with_shell("mpc toggle")
         theme.mpd.update()

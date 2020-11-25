@@ -171,7 +171,6 @@ mpdicon:buttons(my_table.join(
         awful.spawn.with_shell("mpc prev")
         theme.mpd.update()
     end),
-    
     awful.button({ }, 2, function ()
         awful.spawn.with_shell("mpc toggle")
         theme.mpd.update()
