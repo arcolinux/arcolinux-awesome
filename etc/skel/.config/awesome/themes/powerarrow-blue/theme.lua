@@ -162,6 +162,7 @@ theme.volume = lain.widget.alsabar({
 })
 
 -- MPD
+--[[
 local musicplr = "urxvt -title Music -g 130x34-320+16 -e ncmpcpp"
 local mpdicon = wibox.widget.imagebox(theme.widget_music)
 mpdicon:buttons(my_table.join(
@@ -170,7 +171,7 @@ mpdicon:buttons(my_table.join(
         awful.spawn.with_shell("mpc prev")
         theme.mpd.update()
     end),
-    --]]
+    
     awful.button({ }, 2, function ()
         awful.spawn.with_shell("mpc toggle")
         theme.mpd.update()
@@ -196,6 +197,7 @@ theme.mpd = lain.widget.mpd({
         end
     end
 })
+--]]
 
 -- MEM
 local memicon = wibox.widget.imagebox(theme.widget_mem)
@@ -403,7 +405,7 @@ function theme.at_screen_connect(s)
             --arrow(theme.bg_normal, "#343434"),
            -- wibox.container.background(wibox.container.margin(wibox.widget { mailicon, mail and mail.widget, layout = wibox.layout.align.horizontal }, dpi(4), dpi(7)), "#343434"),
             arrow("alpha", "#497B96"),
-            wibox.container.background(wibox.container.margin(wibox.widget { mpdicon, theme.mpd.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(6)), "#497B96"),
+            --wibox.container.background(wibox.container.margin(wibox.widget { mpdicon, theme.mpd.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(6)), "#497B96"),
             arrow("#497B96", "#889FA7"),
             wibox.container.background(wibox.container.margin(wibox.widget { volicon, theme.volume.widget, layout = wibox.layout.align.horizontal }, dpi(2), dpi(3)), "#889FA7"),
             arrow("#889FA7", "#497B96"),

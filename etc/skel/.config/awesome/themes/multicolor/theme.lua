@@ -313,7 +313,7 @@ function theme.at_screen_connect(s)
             layout = wibox.layout.fixed.horizontal,
             --mailicon,
             --mail.widget,
-            mpdicon,
+            --mpdicon,
             theme.mpd.widget,
             netdownicon,
             netdowninfo,
