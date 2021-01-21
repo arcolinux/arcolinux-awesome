@@ -221,8 +221,6 @@ lain.layout.cascade.tile.offset_y      = dpi(32)
 lain.layout.cascade.tile.extra_padding = dpi(5)
 lain.layout.cascade.tile.nmaster       = 5
 lain.layout.cascade.tile.ncol          = 2
-
-beautiful.init(string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), chosen_theme))
 -- }}}
 
 
@@ -379,9 +377,9 @@ globalkeys = my_table.join(
     awful.key({ modkey1, altkey   }, "e", function() awful.util.spawn( "arcolinux-tweak-tool" ) end,
         {description = "ArcoLinux Tweak Tool", group = "alt+ctrl"}),
     awful.key({ modkey1, altkey   }, "Next", function() awful.util.spawn( "conky-rotate -n" ) end,
-        {description = "Xfce appfinder", group = "alt+ctrl"}),
+        {description = "Next conky rotation", group = "alt+ctrl"}),
     awful.key({ modkey1, altkey   }, "Prior", function() awful.util.spawn( "conky-rotate -p" ) end,
-        {description = "Xfce appfinder", group = "alt+ctrl"}),
+        {description = "Previous conky rotation", group = "alt+ctrl"}),
     awful.key({ modkey1, altkey   }, "a", function() awful.util.spawn( "xfce4-appfinder" ) end,
         {description = "Xfce appfinder", group = "alt+ctrl"}),
     awful.key({ modkey1, altkey   }, "b", function() awful.util.spawn( filemanager ) end,
@@ -486,7 +484,7 @@ globalkeys = my_table.join(
     --awful.key({ modkey }, "Left", function () lain.util.tag_view_nonempty(-1) end,
               --{description = "view  previous nonempty", group = "tag"}),
    -- awful.key({ modkey }, "Right", function () lain.util.tag_view_nonempty(1) end,
-             -- {description = "view  previous nonempty", group = "tag"}),
+             -- {description = "view  next nonempty", group = "tag"}),
 
     -- Default client focus
     awful.key({ altkey,           }, "j",
