@@ -1025,6 +1025,7 @@ awful.rules.rules = {
         class = {
           "Arandr",
           "Arcolinux-welcome-app.py",
+          "Arcolinux-calamares-tool.py",
           "Blueberry",
           "Galculator",
           "Gnome-font-viewer",
