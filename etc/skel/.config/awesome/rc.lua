@@ -1025,7 +1025,6 @@ awful.rules.rules = {
         class = {
           "Arandr",
           "Arcolinux-welcome-app.py",
-          "Arcolinux-calamares-tool.py",
           "Blueberry",
           "Galculator",
           "Gnome-font-viewer",
@@ -1060,7 +1059,8 @@ awful.rules.rules = {
           -- Floating clients but centered in screen
     { rule_any = {
        	class = {
-       		"Polkit-gnome-authentication-agent-1"
+       		"Polkit-gnome-authentication-agent-1",
+			"Arcolinux-calamares-tool.py"
 				},
 				},
       	properties = { floating = true },
