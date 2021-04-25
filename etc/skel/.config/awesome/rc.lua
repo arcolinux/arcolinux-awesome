@@ -976,6 +976,9 @@ awful.rules.rules = {
     { rule = { class = "Geany" },
           properties = { maximized = false, floating = false } },
 
+    { rule = { class = "Thunar" },
+          properties = { maximized = false, floating = false } },          
+
     { rule = { class = "Gimp*", role = "gimp-image-window" },
           properties = { maximized = true } },
 

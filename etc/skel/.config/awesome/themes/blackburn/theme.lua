@@ -186,7 +186,8 @@ theme.volume = lain.widget.alsa({
 
 -- Weather
 theme.weather = lain.widget.weather({
-    city_id = 2803138, -- placeholder (Belgium)
+    --APPID =
+    city_id = 2643743, -- placeholder (London)
     settings = function()
         units = math.floor(weather_now["main"]["temp"])
         widget:set_markup(" " .. units .. " ")
