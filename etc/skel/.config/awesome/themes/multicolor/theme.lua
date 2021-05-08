@@ -267,7 +267,7 @@ theme.mpd = lain.widget.mpd({
 function theme.at_screen_connect(s)
     -- Quake application
    -- s.quake = lain.util.quake({ app = awful.util.terminal })
-   s.quake = lain.util.quake({ app = "termite", height = 0.50, argname = "--name %s" })
+   s.quake = lain.util.quake({ app = "urxvt", height = 0.50, argname = "--name %s" })
 
     -- If wallpaper is a function, call it with the screen
     local wallpaper = theme.wallpaper
@@ -314,7 +314,7 @@ function theme.at_screen_connect(s)
             --mailicon,
             --mail.widget,
             --mpdicon,
-            theme.mpd.widget,
+            --theme.mpd.widget,
             netdownicon,
             netdowninfo,
             netupicon,
@@ -329,8 +329,8 @@ function theme.at_screen_connect(s)
             --theme.weather.widget,
             --tempicon,
             --temp.widget,
-            baticon,
-            bat.widget,
+            --baticon,
+            --bat.widget,
             clockicon,
             mytextclock,
             wibox.widget.systray(),
