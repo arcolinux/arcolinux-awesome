@@ -916,7 +916,7 @@ awful.rules.rules = {
     { rule_any = { type = { "dialog", "normal" } },
       properties = { titlebars_enabled = false } },
           -- Set applications to always map on the tag 2 on screen 1.
-    --{ rule = { class = "Subl3" },
+    --{ rule = { class = "Subl" },
         --properties = { screen = 1, tag = awful.util.tagnames[2], switchtotag = true  } },
 
 
@@ -938,7 +938,7 @@ awful.rules.rules = {
       --properties = { screen = 1, tag = awful.util.tagnames[1],switchtotag = true  } },
 
     -- Set applications to always map on the tag 2 on screen 1.
-    --{ rule = { class = "Subl3" },
+    --{ rule = { class = "Subl" },
         --properties = { screen = 1, tag = awful.util.tagnames[2],switchtotag = true  } },
 
     --{ rule = { class = editorgui },
@@ -977,7 +977,7 @@ awful.rules.rules = {
           properties = { maximized = false, floating = false } },
 
     { rule = { class = "Thunar" },
-          properties = { maximized = false, floating = false } },          
+          properties = { maximized = false, floating = false } },
 
     { rule = { class = "Gimp*", role = "gimp-image-window" },
           properties = { maximized = true } },
