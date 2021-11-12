@@ -100,6 +100,7 @@ local themes = {
     "powerarrow",      		-- 2
     "powerarrow-blue",	 	-- 3
     "blackburn",		-- 4
+    "copland",        -- 5    
 }
 
 -- choose your theme here
