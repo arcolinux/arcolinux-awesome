@@ -96,15 +96,37 @@ end
 
 -- Non-empty tag browsing
 -- direction in {-1, 1} <-> {previous, next} non-empty tag
-function util.tag_view_nonempty(direction, sc)
-   local s = sc or awful.screen.focused()
+function util.tag_view_nonempty(direction,sc)
+    direction  = direction or 1
+    local s    = sc or awful.screen.focused()
+    local tags = s.tags
+    local sel  = s.selected_tag
 
-   for _ = 1, #s.tags do
-       awful.tag.viewidx(direction, s)
-       if #s.clients > 0 then
-           return
-       end
-   end
+    local i = sel.index
+    repeat
+        i = i + direction
+
+        -- Wrap around when we reach one of the bounds
+        if i > #tags then
+            i = i - #tags
+        end
+        if i < 1 then
+            i = i + #tags
+        end
+
+        local t = tags[i]
+
+        -- Stop when we get back to where we started
+        if t == sel then
+            break
+        end
+
+        -- If it's The One, view it.
+        if #t:clients() > 0 then
+            t:view_only()
+            return
+        end
+    until false
 end
 
 -- {{{ Dynamic tagging
