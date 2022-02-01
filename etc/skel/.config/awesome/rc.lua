@@ -124,7 +124,7 @@ local editorgui         = "atom"
 local filemanager       = "thunar"
 local mailclient        = "evolution"
 local mediaplayer       = "spotify"
-local terminal          = "urxvt"
+local terminal          = "alacritty"
 local virtualmachine    = "virtualbox"
 
 -- awesome variables
@@ -1018,11 +1018,6 @@ awful.rules.rules = {
 
     { rule = { class = "Xfce4-settings-manager" },
           properties = { floating = false } },
-
-
-
-
-
 
     -- Floating clients.
     { rule_any = {
