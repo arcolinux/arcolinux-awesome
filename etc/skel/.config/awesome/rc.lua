@@ -101,7 +101,7 @@ local themes = {
     "copland",      	-- 2
     "multicolor",	 	-- 3
     "powerarrow",		-- 4
-    "powerarrow-blue",  -- 5    
+    "powerarrow-blue",  -- 5
 }
 
 -- choose your theme here
