@@ -1007,11 +1007,11 @@ awful.rules.rules = {
     { rule = { class = "VirtualBox Machine" },
           properties = { maximized = true } },
 
-    { rule = { class = "Vivaldi-stable" },
-          properties = { maximized = false, floating = false } },
+--    { rule = { class = "Vivaldi-stable" },
+--          properties = { maximized = false, floating = false } },
 
-    { rule = { class = "Vivaldi-stable" },
-          properties = { callback = function (c) c.maximized = false end } },
+--    { rule = { class = "Vivaldi-stable" },
+--          properties = { callback = function (c) c.maximized = false end } },
 
     --IF using Vivaldi snapshot you must comment out the rules above for Vivaldi-stable as they conflict
 --    { rule = { class = "Vivaldi-snapshot" },
