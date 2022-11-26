@@ -124,18 +124,20 @@ theme.cal = lain.widget.cal({
 })
 
 -- Taskwarrior
---local task = wibox.widget.imagebox(theme.widget_task)
---lain.widget.contrib.task.attach(task, {
+-- local task = wibox.widget.imagebox(theme.widget_task)
+-- lain.widget.contrib.task.attach(task, {
     -- do not colorize output
 --    show_cmd = "task | sed -r 's/\\x1B\\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g'"
---})
---task:buttons(my_table.join(awful.button({}, 1, lain.widget.contrib.task.prompt)))
+-- })
+-- task:buttons(my_table.join(awful.button({}, 1, lain.widget.contrib.task.prompt)))
 
-
+-- Scissors (xsel copy and paste)
+-- local scissors = wibox.widget.imagebox(theme.widget_scissors)
+-- scissors:buttons(my_table.join(awful.button({}, 1, function() awful.spawn.with_shell("xsel | xsel -i -b") end)))
 
 -- Mail IMAP check
-local mailicon = wibox.widget.imagebox(theme.widget_mail)
 --[[ commented because it needs to be set before use
+local mailicon = wibox.widget.imagebox(theme.widget_mail)
 mailicon:buttons(my_table.join(awful.button({ }, 1, function () awful.spawn(mail) end)))
 theme.mail = lain.widget.imap({
     timeout  = 180,
@@ -311,6 +313,16 @@ local net = lain.widget.net({
     end
 })
 
+-- Brightness
+local brighticon = wibox.widget.imagebox(theme.widget_brightness)
+-- If you use xbacklight, comment the line with "light -G" and uncomment the line bellow
+-- local brightwidget = awful.widget.watch('xbacklight -get', 0.1,
+local brightwidget = awful.widget.watch('light -G', 0.1,
+    function(widget, stdout, stderr, exitreason, exitcode)
+        local brightness_level = tonumber(string.format("%.0f", stdout))
+        widget:set_markup(markup.font(theme.font, " " .. brightness_level .. "%"))
+end)
+
 -- Separators
 local arrow = separators.arrow_left
 
@@ -351,7 +363,7 @@ function theme.at_screen_connect(s)
     end
     gears.wallpaper.maximized(wallpaper, s, true)
 
-    -- All tags open with layout 1
+    -- Tags
     awful.tag(awful.util.tagnames, s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
@@ -360,10 +372,11 @@ function theme.at_screen_connect(s)
     -- We need one layoutbox per screen.
     s.mylayoutbox = awful.widget.layoutbox(s)
     s.mylayoutbox:buttons(my_table.join(
-                           awful.button({ }, 1, function () awful.layout.inc( 1) end),
-                           awful.button({ }, 3, function () awful.layout.inc(-1) end),
-                           awful.button({ }, 4, function () awful.layout.inc( 1) end),
-                           awful.button({ }, 5, function () awful.layout.inc(-1) end)))
+                           awful.button({}, 1, function () awful.layout.inc( 1) end),
+                           awful.button({}, 2, function () awful.layout.set( awful.layout.layouts[1] ) end),
+                           awful.button({}, 3, function () awful.layout.inc(-1) end),
+                           awful.button({}, 4, function () awful.layout.inc( 1) end),
+                           awful.button({}, 5, function () awful.layout.inc(-1) end)))
     -- Create a taglist widget
     s.mytaglist = awful.widget.taglist(s, awful.widget.taglist.filter.all, awful.util.taglist_buttons)
 
@@ -387,6 +400,7 @@ function theme.at_screen_connect(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             wibox.widget.systray(),
+            --wibox.container.margin(scissors, dpi(4), dpi(8)),
             --[[ using shapes
             pl(wibox.widget { mpdicon, theme.mpd.widget, layout = wibox.layout.align.horizontal }, "#343434"),
             pl(task, "#343434"),
