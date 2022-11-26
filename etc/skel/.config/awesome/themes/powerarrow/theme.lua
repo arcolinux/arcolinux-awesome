@@ -59,13 +59,14 @@ theme.widget_ac                                 = theme.dir .. "/icons/ac.png"
 theme.widget_battery                            = theme.dir .. "/icons/battery.png"
 theme.widget_battery_low                        = theme.dir .. "/icons/battery_low.png"
 theme.widget_battery_empty                      = theme.dir .. "/icons/battery_empty.png"
+theme.widget_brightness                         = theme.dir .. "/icons/brightness.png"
 theme.widget_mem                                = theme.dir .. "/icons/mem.png"
 theme.widget_cpu                                = theme.dir .. "/icons/cpu.png"
 theme.widget_temp                               = theme.dir .. "/icons/temp.png"
 theme.widget_net                                = theme.dir .. "/icons/net.png"
 theme.widget_hdd                                = theme.dir .. "/icons/hdd.png"
 theme.widget_music                              = theme.dir .. "/icons/note.png"
-theme.widget_music_on                           = theme.dir .. "/icons/note.png"
+theme.widget_music_on                           = theme.dir .. "/icons/note_on.png"
 theme.widget_music_pause                        = theme.dir .. "/icons/pause.png"
 theme.widget_music_stop                         = theme.dir .. "/icons/stop.png"
 theme.widget_vol                                = theme.dir .. "/icons/vol.png"
@@ -121,8 +122,6 @@ theme.cal = lain.widget.cal({
         bg   = theme.bg_normal
     }
 })
-
-
 
 -- Taskwarrior
 --local task = wibox.widget.imagebox(theme.widget_task)
