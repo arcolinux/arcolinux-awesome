@@ -374,6 +374,8 @@ globalkeys = my_table.join(
           --{description = "run prompt", group = "super"}),
     awful.key({ modkey }, "x",  function () awful.util.spawn( "archlinux-logout" ) end,
       {description = "exit", group = "hotkeys"}),
+    awful.key({ modkey, "Shift"   }, "x",  function () awful.util.spawn( "arcolinux-powermenu" ) end,
+      {description = "exit", group = "hotkeys"}),
     awful.key({ modkey }, "Escape", function () awful.util.spawn( "xkill" ) end,
         {description = "Kill proces", group = "hotkeys"}),
 
