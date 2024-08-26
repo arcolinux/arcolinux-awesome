@@ -122,7 +122,7 @@ local browser1          = "vivaldi-stable"
 local browser2          = "firefox"
 local browser3          = "chromium -no-default-browser-check"
 local editor            = os.getenv("EDITOR") or "nano"
-local editorgui         = "atom"
+local editorgui         = "code"
 local filemanager       = "thunar"
 local mailclient        = "evolution"
 local mediaplayer       = "spotify"
@@ -239,7 +239,6 @@ local myawesomemenu = {
 awful.util.mymainmenu = freedesktop.menu.build({
     before = {
         { "Awesome", myawesomemenu },
-        --{ "Atom", "atom" },
         -- other triads can be put here
     },
     after = {
